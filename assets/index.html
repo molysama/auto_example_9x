@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./bulma.min.css" />
+        <link
+            href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css"
+            rel="stylesheet"
+        />
+        <title>demo</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-image: url("./bg.png");
+                background-position: center;
+                background-size: cover;
+            }
+
+            @font-face {
+                font-family: monoton;
+                src: url("./Monoton-Regular.ttf");
+            }
+
+            .monoton {
+                font-family: monoton;
+                color: #fff;
+                text-align: center;
+                /* animation: neon2 1.5s ease-in-out infinite alternate; */
+                font-size: 3em;
+                position: relative;
+            }
+            .monoton:after {
+                content: attr(value);
+                position: absolute;
+                width: 100%;
+                left: 0;
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+                    0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177,
+                    0 0 100px #ff1177, 0 0 150px hsl(334, 100%, 53%);
+                animation: monotonAni 3.5s ease-in-out infinite alternate;
+            }
+            .page {
+                height: 100vh;
+                backdrop-filter: brightness(70%);
+            }
+            .login {
+                margin: auto;
+                width: 100%;
+            }
+            label.is-white {
+                color: #ffffff !important;
+                letter-spacing: 2px;
+                /* animation: neon2 1.5s ease-in-out infinite alternate; */
+                /* animation: none; */
+            }
+            @keyframes monotonAni {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0.5;
+                }
+            }
+            @keyframes neon1 {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+                        0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177,
+                        0 0 100px #ff1177, 0 0 150px #ff1177;
+                }
+                to {
+                    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+                        0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177,
+                        0 0 50px #ff1177, 0 0 75px #ff1177;
+                }
+            }
+
+            @keyframes neon2 {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+                        0 0 40px #228dff, 0 0 70px #228dff, 0 0 80px #228dff,
+                        0 0 100px #228dff, 0 0 150px #228dff;
+                }
+                to {
+                    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+                        0 0 20px #228dff, 0 0 35px #228dff, 0 0 40px #228dff,
+                        0 0 50px #228dff, 0 0 75px #228dff;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page flex">
+            <div class="login px2">
+                <div class="field">
+                    <div class="control">
+                        <h1 class="monoton" value="MOLYSAMA">MOLYSAMA</h1>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-white">用户名</label>
+                    <div class="control">
+                        <input
+                            class="input is-rounded"
+                            type="text"
+                            placeholder="Text input"
+                        />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label is-white">密码</label>
+                    <div class="control">
+                        <input
+                            class="input is-rounded"
+                            type="text"
+                            placeholder="Text input"
+                        />
+                    </div>
+                    <!-- <p class="help is-success">This username is available</p> -->
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox is-white">
+                            <input type="checkbox" />
+                            记住密码
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button
+                            id="submit"
+                            class="button is-rounded is-link is-fullwidth"
+                        >
+                            打开悬浮窗
+                        </button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button
+                            id="stop"
+                            class="button is-rounded is-danger is-fullwidth"
+                        >
+                            停止监听器
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.getElementById("submit").onclick = function () {
+            prompt("submit")
+        }
+        document.getElementById("stop").onclick = function () {
+            prompt("stop", JSON.stringify("stop的传参"))
+        }
+    </script>
+</html>

@@ -1,0 +1,27 @@
+{
+    "name": "RxAuto",
+    "mainScriptFile": "dist/app.js",
+    "main": "dist/app.js",
+    "launchConfig": {
+        "hideLogs": true,
+        "stableMode": true
+    },
+    "ignore": [
+        "build",
+        "node_modules",
+        "src",
+        "test",
+        ".babelrc",
+        "jsconfig.json",
+        "tsconfig.json",
+        "package-lock.json",
+        "package.json",
+        "webpack.config.js",
+        "LICENSE",
+        "README.md",
+        ".gitignore"
+    ],
+    "packageName": "com.example.rxauto",
+    "versionName": "1.0.0",
+    "versionCode": 1
+}
